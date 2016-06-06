@@ -1,0 +1,354 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 14.00.23918.0 (9712d8e4).
+//
+// c:\users\igutnikov\git\aot-russianmorphology\testlemmatizercom\debug\lemmatizer.tlh
+//
+// C++ source equivalent of Win32 type library C:\Rml\Bin\Lemmatizer.tlb
+// compiler-generated file created 06/06/16 at 15:51:56 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace LEMMATIZERLib {
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("ca8cf90e-fbb6-11d2-9c98-00105a68baf2"))
+/* LIBID */ __LEMMATIZERLib;
+struct /* coclass */ Paradigm;
+struct __declspec(uuid("8d229f36-fd73-11d2-9c9f-00105a68baf2"))
+/* dual interface */ IParadigm;
+struct /* coclass */ ParadigmCollection;
+struct __declspec(uuid("9fcc72d0-fe0a-11d2-9ca0-00105a68baf2"))
+/* dual interface */ IParadigmCollection;
+struct /* coclass */ LemmatizerRussian;
+struct __declspec(uuid("bbe83451-fbd6-11d2-9c98-00105a68baf2"))
+/* dual interface */ ILemmatizer;
+enum __MIDL___MIDL_itf_Lemmatizer_0000_0000_0001;
+struct /* coclass */ LemmatizerEnglish;
+struct /* coclass */ LemmatizerGerman;
+struct /* coclass */ PLMLineCollection;
+struct __declspec(uuid("1887b706-1cae-11d3-9cce-00105a68baf2"))
+/* dual interface */ IPLMLineCollection;
+typedef enum __MIDL___MIDL_itf_Lemmatizer_0000_0000_0001 idlSubjectEnum;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(IParadigm, __uuidof(IParadigm));
+_COM_SMARTPTR_TYPEDEF(IParadigmCollection, __uuidof(IParadigmCollection));
+_COM_SMARTPTR_TYPEDEF(ILemmatizer, __uuidof(ILemmatizer));
+_COM_SMARTPTR_TYPEDEF(IPLMLineCollection, __uuidof(IPLMLineCollection));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("6b232504-1816-11d3-9cc6-00105a68baf2"))
+Paradigm;
+    // [ default ] interface IParadigm
+
+struct __declspec(uuid("8d229f36-fd73-11d2-9c9f-00105a68baf2"))
+IParadigm : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetForm))
+    _bstr_t Form[];
+    __declspec(property(get=GetParadigmID))
+    unsigned long ParadigmID;
+    __declspec(property(get=GetCount))
+    unsigned long Count;
+    __declspec(property(get=GetAncode))
+    _bstr_t Ancode[];
+    __declspec(property(get=GetNorm))
+    _bstr_t Norm;
+    __declspec(property(get=GetTypeAncode))
+    _bstr_t TypeAncode;
+    __declspec(property(get=GetFounded))
+    long Founded;
+    __declspec(property(get=GetSrcAncode))
+    _bstr_t SrcAncode;
+    __declspec(property(get=GetSrcNorm))
+    _bstr_t SrcNorm;
+    __declspec(property(get=GetHomonymWeight))
+    int HomonymWeight;
+    __declspec(property(get=GetWordWeight))
+    int WordWeight;
+    __declspec(property(get=GetHomonymWeightWithForm))
+    int HomonymWeightWithForm[];
+    __declspec(property(get=GetAccent))
+    unsigned char Accent[];
+    __declspec(property(get=GetBaseLength))
+    unsigned int BaseLength;
+    __declspec(property(get=GetLemmaPrefixLength))
+    int LemmaPrefixLength;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    unsigned long GetParadigmID ( );
+    unsigned long GetCount ( );
+    _bstr_t GetAncode (
+        unsigned long pos );
+    _bstr_t GetNorm ( );
+    _bstr_t GetForm (
+        unsigned long pos );
+    _bstr_t GetTypeAncode ( );
+    long GetFounded ( );
+    _bstr_t GetSrcAncode ( );
+    _bstr_t GetSrcNorm ( );
+    int GetHomonymWeight ( );
+    int GetWordWeight ( );
+    int GetHomonymWeightWithForm (
+        unsigned long pos );
+    unsigned char GetAccent (
+        unsigned long pos );
+    unsigned int GetBaseLength ( );
+    int GetLemmaPrefixLength ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_ParadigmID (
+        /*[out,retval]*/ unsigned long * pVal ) = 0;
+      virtual HRESULT __stdcall get_Count (
+        /*[out,retval]*/ unsigned long * pVal ) = 0;
+      virtual HRESULT __stdcall get_Ancode (
+        /*[in]*/ unsigned long pos,
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall get_Norm (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall get_Form (
+        /*[in]*/ unsigned long pos,
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall get_TypeAncode (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall get_Founded (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_SrcAncode (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall get_SrcNorm (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall get_HomonymWeight (
+        /*[out,retval]*/ int * pVal ) = 0;
+      virtual HRESULT __stdcall get_WordWeight (
+        /*[out,retval]*/ int * pVal ) = 0;
+      virtual HRESULT __stdcall get_HomonymWeightWithForm (
+        /*[in]*/ unsigned long pos,
+        /*[out,retval]*/ int * pVal ) = 0;
+      virtual HRESULT __stdcall get_Accent (
+        /*[in]*/ unsigned long pos,
+        /*[out,retval]*/ unsigned char * pVal ) = 0;
+      virtual HRESULT __stdcall get_BaseLength (
+        /*[out,retval]*/ unsigned int * pVal ) = 0;
+      virtual HRESULT __stdcall get_LemmaPrefixLength (
+        /*[out,retval]*/ int * pVal ) = 0;
+};
+
+struct __declspec(uuid("6b232506-1816-11d3-9cc6-00105a68baf2"))
+ParadigmCollection;
+    // [ default ] interface IParadigmCollection
+
+struct __declspec(uuid("9fcc72d0-fe0a-11d2-9ca0-00105a68baf2"))
+IParadigmCollection : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetItem))
+    IParadigmPtr Item[];
+    __declspec(property(get=GetCount))
+    long Count;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    long GetCount ( );
+    IParadigmPtr GetItem (
+        long pos );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_Count (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall get_Item (
+        /*[in]*/ long pos,
+        /*[out,retval]*/ struct IParadigm * * pVal ) = 0;
+};
+
+struct __declspec(uuid("6b23250f-1816-11d3-9cc6-00105a68baf2"))
+LemmatizerRussian;
+    // [ default ] interface ILemmatizer
+
+struct __declspec(uuid("bbe83451-fbd6-11d2-9c98-00105a68baf2"))
+ILemmatizer : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetUseStatistic,put=PutUseStatistic))
+    long UseStatistic;
+    __declspec(property(put=PutMaximalPrediction))
+    long MaximalPrediction;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IParadigmCollectionPtr CreateParadigmCollectionFromNorm (
+        _bstr_t Norm,
+        long capital,
+        long UsePrediction );
+    IParadigmCollectionPtr CreateParadigmCollectionFromForm (
+        _bstr_t Form,
+        long capital,
+        long UsePrediction );
+    IParadigmPtr CreateParadigmFromID (
+        long id );
+    HRESULT LoadDictionariesRegistry ( );
+    long GetUseStatistic ( );
+    void PutUseStatistic (
+        long pVal );
+    HRESULT LoadStatisticRegistry (
+        idlSubjectEnum subj );
+    void PutMaximalPrediction (
+        long _arg1 );
+    long CheckABC (
+        _bstr_t Word );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_CreateParadigmCollectionFromNorm (
+        /*[in]*/ BSTR Norm,
+        /*[in]*/ long capital,
+        /*[in]*/ long UsePrediction,
+        /*[out,retval]*/ struct IParadigmCollection * * pVal ) = 0;
+      virtual HRESULT __stdcall raw_CreateParadigmCollectionFromForm (
+        /*[in]*/ BSTR Form,
+        /*[in]*/ long capital,
+        /*[in]*/ long UsePrediction,
+        /*[out,retval]*/ struct IParadigmCollection * * pVal ) = 0;
+      virtual HRESULT __stdcall raw_CreateParadigmFromID (
+        /*[in]*/ long id,
+        /*[out,retval]*/ struct IParadigm * * pVal ) = 0;
+      virtual HRESULT __stdcall raw_LoadDictionariesRegistry ( ) = 0;
+      virtual HRESULT __stdcall get_UseStatistic (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall put_UseStatistic (
+        /*[in]*/ long pVal ) = 0;
+      virtual HRESULT __stdcall raw_LoadStatisticRegistry (
+        /*[in]*/ idlSubjectEnum subj ) = 0;
+      virtual HRESULT __stdcall put_MaximalPrediction (
+        /*[in]*/ long _arg1 ) = 0;
+      virtual HRESULT __stdcall raw_CheckABC (
+        /*[in]*/ BSTR Word,
+        /*[out,retval]*/ long * Result ) = 0;
+};
+
+enum __MIDL___MIDL_itf_Lemmatizer_0000_0000_0001
+{
+    idlFinance = 1,
+    idlComputer = 2,
+    idlLiterature = 4
+};
+
+struct __declspec(uuid("6b232511-1816-11d3-9cc6-00105a68baf2"))
+LemmatizerEnglish;
+    // [ default ] interface ILemmatizer
+
+struct __declspec(uuid("d26721ac-5ba9-4a1e-bbd0-a74cf86437e7"))
+LemmatizerGerman;
+    // [ default ] interface ILemmatizer
+
+struct __declspec(uuid("34e94e25-6c26-11d3-9d4a-00105a68baf2"))
+PLMLineCollection;
+    // [ default ] interface IPLMLineCollection
+
+struct __declspec(uuid("1887b706-1cae-11d3-9cce-00105a68baf2"))
+IPLMLineCollection : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetItem,put=PutItem))
+    _bstr_t Item[];
+    __declspec(property(get=GetCount))
+    long Count;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t GetItem (
+        long pos );
+    void PutItem (
+        long pos,
+        _bstr_t pVal );
+    long GetCount ( );
+    HRESULT Remove (
+        long pos );
+    HRESULT SaveToFile (
+        _bstr_t filename );
+    HRESULT ProcessPlmLines (
+        IUnknown * piGraphmatFile );
+    HRESULT AttachLemmatizer (
+        struct ILemmatizer * pVal );
+    HRESULT Clear ( );
+    HRESULT ProcessHyphenWords (
+        IUnknown * piGraphan );
+    HRESULT CopyItems (
+        IUnknown * piPlmLinesFrom );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_Item (
+        /*[in]*/ long pos,
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall put_Item (
+        /*[in]*/ long pos,
+        /*[in]*/ BSTR pVal ) = 0;
+      virtual HRESULT __stdcall get_Count (
+        /*[out,retval]*/ long * pVal ) = 0;
+      virtual HRESULT __stdcall raw_Remove (
+        /*[in]*/ long pos ) = 0;
+      virtual HRESULT __stdcall raw_SaveToFile (
+        /*[in]*/ BSTR filename ) = 0;
+      virtual HRESULT __stdcall raw_ProcessPlmLines (
+        /*[in]*/ IUnknown * piGraphmatFile ) = 0;
+      virtual HRESULT __stdcall raw_AttachLemmatizer (
+        struct ILemmatizer * pVal ) = 0;
+      virtual HRESULT __stdcall raw_Clear ( ) = 0;
+      virtual HRESULT __stdcall raw_ProcessHyphenWords (
+        IUnknown * piGraphan ) = 0;
+      virtual HRESULT __stdcall raw_CopyItems (
+        /*[in]*/ IUnknown * piPlmLinesFrom ) = 0;
+};
+
+//
+// Wrapper method implementations
+//
+
+#include "c:\users\igutnikov\git\aot-russianmorphology\testlemmatizercom\debug\lemmatizer.tli"
+
+} // namespace LEMMATIZERLib
+
+#pragma pack(pop)
