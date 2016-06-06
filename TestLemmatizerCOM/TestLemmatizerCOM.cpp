@@ -7,6 +7,8 @@ using namespace std;
 using namespace LEMMATIZERLib;
 int main(int argc, char *argv[])
 {
+	_bstr_t main_form;
+
 	CoInitialize(NULL);
 	//  creating and loading Russian dictionary
 	ILemmatizerPtr	piLemmatizer;
@@ -29,7 +31,20 @@ int main(int argc, char *argv[])
 		//  print possible lemmas
 		for (int j = 0; j < piParadigmCollection->Count; j++)
 		{
-			_bstr_t Lemma = _bstr_t(piParadigmCollection->Item[j]->Norm);
+			main_form = _bstr_t(piParadigmCollection->Item[j]->Norm);
+			CharToOem(main_form, main_form);
+			cout << main_form << endl;
+		};
+	}
+
+	{
+		IParadigmCollectionPtr piParadigmCollection2 = piLemmatizer->CreateParadigmCollectionFromNorm(main_form, FALSE, FALSE);
+		//  print possible lemmas
+		cout << piParadigmCollection2->Count << endl;
+		for (int j = 0; j < piParadigmCollection2->Count; j++)
+		{
+			_bstr_t Lemma = _bstr_t(piParadigmCollection2->Item[j]->Norm);
+			
 			CharToOem(Lemma, Lemma);
 			cout << Lemma << endl;
 		};

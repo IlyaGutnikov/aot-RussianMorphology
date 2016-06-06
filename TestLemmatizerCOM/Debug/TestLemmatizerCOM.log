@@ -1,3 +1,2 @@
 ﻿  TestLemmatizerCOM.cpp
-TestLemmatizerCOM.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
   TestLemmatizerCOM.vcxproj -> C:\Users\igutnikov\git\aot-RussianMorphology\TestLemmatizerCOM\Debug\TestLemmatizerCOM.exe
