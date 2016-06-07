@@ -2,6 +2,8 @@
 #include <comdef.h>
 #include "windows.h"
 #include <iostream>
+#include <process.h>
+#include <string>
 #import "C:\Rml\Bin\Lemmatizer.tlb"
 using namespace std;
 using namespace LEMMATIZERLib;
@@ -46,20 +48,29 @@ int main(int argc, char *argv[])
 	}
 
 	{
-		IParadigmCollectionPtr piParadigmCollection2 = piLemmatizer->CreateParadigmCollectionFromNorm(main_form, 0, 1);
+		IParadigmCollectionPtr piParadigmCollection2 = piLemmatizer->CreateParadigmCollectionFromNorm(main_form, 0, 0);
 		 
 		cout << piParadigmCollection2->Count << endl;
 
 		for (int i = 0; i < piParadigmCollection2->Count; ++i)
 		{
-			_bstr_t form = _bstr_t(piParadigmCollection2->Item[i]->Norm);
-			CharToOem(form, form);
-			cout << form << endl;
-		};
+			for (int j = 0; j < piParadigmCollection2[i].Count; j++)
+			{
+				_bstr_t form = _bstr_t(piParadigmCollection2->Item[i]->Form[j]);
+
+				CharToOem(form, form);
+				cout << form << endl;
+			}
+		}
 	}
 	// destroy the dictionary
 	piLemmatizer = 0;
 	CoUninitialize();
+	string str = "";
+	str = system("TestLemmatizerCSharp.exe");
+	cout << str << endl;
+
+	cout << "Это после выполнения";
 
 	system("pause");
 	return 0;
