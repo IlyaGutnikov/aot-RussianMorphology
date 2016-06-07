@@ -1,0 +1,8 @@
+C:\Users\igutnikov\git\aot-RussianMorphology\TestLemmatizerCSharp\TestLemmatizerCSharp\TestLemmatizerCSharp\bin\Debug\TestLemmatizerCSharp.exe.config
+C:\Users\igutnikov\git\aot-RussianMorphology\TestLemmatizerCSharp\TestLemmatizerCSharp\TestLemmatizerCSharp\bin\Debug\TestLemmatizerCSharp.exe
+C:\Users\igutnikov\git\aot-RussianMorphology\TestLemmatizerCSharp\TestLemmatizerCSharp\TestLemmatizerCSharp\bin\Debug\TestLemmatizerCSharp.pdb
+C:\Users\igutnikov\git\aot-RussianMorphology\TestLemmatizerCSharp\TestLemmatizerCSharp\TestLemmatizerCSharp\obj\Debug\TestLemmatizerCSharp.csprojResolveAssemblyReference.cache
+C:\Users\igutnikov\git\aot-RussianMorphology\TestLemmatizerCSharp\TestLemmatizerCSharp\TestLemmatizerCSharp\obj\Debug\Interop.LEMMATIZERLib.dll
+C:\Users\igutnikov\git\aot-RussianMorphology\TestLemmatizerCSharp\TestLemmatizerCSharp\TestLemmatizerCSharp\obj\Debug\TestLemmatizerCSharp.csproj.ResolveComReference.cache
+C:\Users\igutnikov\git\aot-RussianMorphology\TestLemmatizerCSharp\TestLemmatizerCSharp\TestLemmatizerCSharp\obj\Debug\TestLemmatizerCSharp.exe
+C:\Users\igutnikov\git\aot-RussianMorphology\TestLemmatizerCSharp\TestLemmatizerCSharp\TestLemmatizerCSharp\obj\Debug\TestLemmatizerCSharp.pdb

@@ -23,37 +23,44 @@ int main(int argc, char *argv[])
 	if (FAILED(hr))
 	{
 		cout << "Fatal Error: Lemmatizer loading failed";
-		return false;
+		return 1;
+	}
+
+	else {
+
+		piLemmatizer->LoadDictionariesRegistry();
+	
 	}
 	// lemmatizing a word
 	{
-		IParadigmCollectionPtr piParadigmCollection = piLemmatizer->CreateParadigmCollectionFromForm("поющая", FALSE, FALSE);
+		IParadigmCollectionPtr piParadigmCollection = piLemmatizer->CreateParadigmCollectionFromForm("девочкой", 0, 0);
 		//  print possible lemmas
+		cout << piParadigmCollection->Count << endl;
 		for (int j = 0; j < piParadigmCollection->Count; j++)
 		{
-			main_form = _bstr_t(piParadigmCollection->Item[j]->Norm);
+			main_form = _bstr_t(piParadigmCollection->Item[j]->SrcNorm);
 			CharToOem(main_form, main_form);
 			cout << main_form << endl;
 		};
+
 	}
 
 	{
-		IParadigmCollectionPtr piParadigmCollection2 = piLemmatizer->CreateParadigmCollectionFromNorm(main_form, FALSE, FALSE);
-		//  print possible lemmas
+		IParadigmCollectionPtr piParadigmCollection2 = piLemmatizer->CreateParadigmCollectionFromNorm(main_form, 0, 1);
+		 
 		cout << piParadigmCollection2->Count << endl;
-		for (int j = 0; j < piParadigmCollection2->Count; j++)
+
+		for (int i = 0; i < piParadigmCollection2->Count; ++i)
 		{
-			_bstr_t Lemma = _bstr_t(piParadigmCollection2->Item[j]->Norm);
-			
-			CharToOem(Lemma, Lemma);
-			cout << Lemma << endl;
+			_bstr_t form = _bstr_t(piParadigmCollection2->Item[i]->Norm);
+			CharToOem(form, form);
+			cout << form << endl;
 		};
 	}
 	// destroy the dictionary
 	piLemmatizer = 0;
 	CoUninitialize();
 
-	cout << "Hello, world!" << endl;
-	system("pause"); // Только для тех, у кого MS Visual Studio
+	system("pause");
 	return 0;
 }
