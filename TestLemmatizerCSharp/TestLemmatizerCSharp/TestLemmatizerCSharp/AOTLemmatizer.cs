@@ -2,8 +2,14 @@
 using System.Linq;
 using LEMMATIZERLib;
 
+/// <summary>
+/// AOTLemmatizer
+/// </summary>
 namespace AOTLemmatizer
 {
+    /// <summary>
+    /// Класс взаимодействия с AOT
+    /// </summary>
     class AOTLemmatizer
     {
         private readonly ILemmatizer lemmatizerRu;
@@ -17,10 +23,21 @@ namespace AOTLemmatizer
             lemmatizerRu.LoadDictionariesRegistry();
         }
 
+        /// <summary>
+        /// Получили первую норму которая подходит для слова
+        /// </summary>
+        /// <param name="word">Входное слово для которого находим норму</param>
+        /// <returns>Норма слова</returns>
         public string Stem(string word)
         {
             return GetAllNorms(word).First();
         }
+
+        /// <summary>
+        /// Получить все нормы слова
+        /// </summary>
+        /// <param name="word">Входное слово</param>
+        /// <returns>Все нормы слова</returns>
         public IEnumerable<string> GetAllNorms(string word)
         {
             IParadigmCollection piParadigmCollection = lemmatizerRu.CreateParadigmCollectionFromForm(word, 0, 0);
@@ -28,6 +45,12 @@ namespace AOTLemmatizer
             for (int i = 0; i < len; ++i)
                 yield return piParadigmCollection[i].Norm.ToLower();
         }
+
+        /// <summary>
+        /// Получить все формы слова
+        /// </summary>
+        /// <param name="word">Входное слово</param>
+        /// <returns>Все формы слова</returns>
         public IEnumerable<string> GetAllForms(string word)
         {
             IParadigmCollection piParadigmCollection = lemmatizerRu.CreateParadigmCollectionFromNorm(word, 0, 0);

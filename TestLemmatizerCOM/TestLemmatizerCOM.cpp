@@ -66,11 +66,6 @@ int main(int argc, char *argv[])
 	// destroy the dictionary
 	piLemmatizer = 0;
 	CoUninitialize();
-	string str = "";
-	str = system("TestLemmatizerCSharp.exe");
-	cout << str << endl;
-
-	cout << "Это после выполнения";
 
 	system("pause");
 	return 0;
