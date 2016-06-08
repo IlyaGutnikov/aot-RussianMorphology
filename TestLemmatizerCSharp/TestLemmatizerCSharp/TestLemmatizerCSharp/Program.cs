@@ -37,7 +37,7 @@ namespace TestLemmatizerCSharp
 
                 if ((!inputCommand.Equals("GetAllNorms")) && (!inputCommand.Equals("GetAllForms")) && (!inputCommand.Equals("Stem")))
                 {
-                    Console.WriteLine("error");
+                    Console.Write("error");
                 }
 
                 if (inputCommand.Equals("GetAllForms"))
@@ -45,7 +45,8 @@ namespace TestLemmatizerCSharp
                     List<string> forms = aotLem.GetAllForms(inputWord).ToList();
                     for (int k = 0; k < forms.Count; k++)
                     {
-                        Console.WriteLine(forms[k].ToString());
+                        Console.Write(forms[k].ToString());
+                        Console.Write(",");
                     }
                 }
 
@@ -54,14 +55,15 @@ namespace TestLemmatizerCSharp
                     List<string> norms = aotLem.GetAllNorms(inputWord).ToList();
                     for (int k = 0; k < norms.Count; k++)
                     {
-                        Console.WriteLine(norms[k].ToString());
+                        Console.Write(norms[k].ToString());
+                        Console.Write(",");
                     }
                 }
 
                 if (inputCommand.Equals("Stem"))
                 {
                     string stem = aotLem.Stem(inputWord);
-                    Console.WriteLine(stem);
+                    Console.Write(stem);
                 }
             }
             //Console.ReadLine();
