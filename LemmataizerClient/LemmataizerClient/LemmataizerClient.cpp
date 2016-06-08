@@ -20,15 +20,16 @@ int main()
 
 	string str = "";
 	str = "TestLemmatizerCSharp.exe GetAllForms зуд";
-
-	FILE* outputfile = _popen(str.c_str(), "r");
+	//GetAllForms - получаем все формы
+	//GetAllNorms - получаем все нормы
+	//Stem - получаем первую норму из всех возможных
 	
-	string c_str = exec(str.c_str());
-	cout << c_str << endl;
-
+	string output = exec(str.c_str());
+	cout << output << endl;
+	
 	string first = "";
-	int pos = c_str.find(",");
-	first = c_str.substr(0, pos);
+	int pos = output.find(",");
+	first = output.substr(0, pos);
 	cout << first << endl;
 
 	cout << "After execution" << endl;
